@@ -1,4 +1,4 @@
-# Scrapy settings for navernews project
+# Scrapy settings for yes24books project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "navernews"
+BOT_NAME = "yes24books"
 
-SPIDER_MODULES = ["navernews.spiders"]
-NEWSPIDER_MODULE = "navernews.spiders"
+SPIDER_MODULES = ["yes24books.spiders"]
+NEWSPIDER_MODULE = "yes24books.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "navernews (+http://www.yourdomain.com)"
+#USER_AGENT = "yes24books (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "navernews.middlewares.NavernewsSpiderMiddleware": 543,
+#    "yes24books.middlewares.Yes24BooksSpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 DOWNLOADER_MIDDLEWARES = {
-   "navernews.middlewares.RandomUserAgentMiddleware": 400,
+   "yes24books.middlewares.RandomUserAgentMiddleware": 400,
 }
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   "navernews.pipelines.CleanValidatePipeline": 300,
+   "yes24books.pipelines.CleanValidatePipeline": 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -89,13 +89,4 @@ ITEM_PIPELINES = {
 
 # Set settings whose default value is deprecated to a future-proof value
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
-# FEED_EXPORT_ENCODING = "utf-8-sig"
-
-FEEDS = {
-  "results.csv": {
-    "format": "csv",
-    "encoding": "utf-8-sig",
-    "fields": ["rank", "query", "title", "url"],
-    "overwrite": True
-  }
-}
+FEED_EXPORT_ENCODING = "utf-8-sig"
